@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row login-wrapper">
+    <form class="form">
+      <div>
+        <input class="form-control username-class" type="text" placeholder="Username" [(ngModel)]="userName" name="username">
+      </div>
+      <div *ngIf="!showPassword" class="input-group password-class">
+        <input class="form-control " type="password" placeholder="Password" 
+        [(ngModel)]="enteredPassword" name="password"/>
+          <div class="input-group-append" (click)="showHidePassword(false)">
+          <span class="input-group-text"><fa name="eye" class="toggle-password"></fa></span>
+        </div>
+      </div>
+      <div *ngIf="showPassword" class="input-group password-class">
+        <input class="form-control" type="text" placeholder="Password" 
+        [(ngModel)]="enteredPassword" name="password"/>
+        <div class="input-group-append" (click)="showHidePassword(true)">
+            <span class="input-group-text"> <fa name="eye-slash" class="toggle-password"></fa> </span>
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <button class="btn btn-primary btn-login" [disabled]="userName ==null || enteredPassword  ==null" 
+        (click)="validateUser()">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="hotel-description">
+  <div class="container">
+    <div class="row desc-container">
+      <div class="col-lg-6">
+        <img [src]="selectedHotel.image" class=" image-desc">
+      </div>
+      <div class="col-lg-5 ">
+        <div class="hotel-name">{{selectedHotel.name}}</div>
+        <div>
+          <button class="btn btn-outline-primary btn-lg" [disabled]="!selectedHotel.available"
+           (click)="validateLoginDetails()">Book</button>
+          <div *ngIf="!selectedHotel.available" class="warning">Not available</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <span class="description">{{selectedHotel.description}}</span>
+    </div>
+  </div>
+</div>

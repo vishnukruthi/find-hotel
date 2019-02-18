@@ -1,0 +1,32 @@
+<div class="hotel-search">
+  <div class="search-container">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+
+  <div class="display-list">
+    <div *ngFor="let hotel of totalHotels">
+      <div class="container">
+        <div class="row detail-wrapper">
+          <div class="hotel-icon col-lg-2">
+            <img [src]="hotel.image" class="img-class">
+          </div>
+          <div class="hotel-details col-lg-8">
+            <div class="hotel-name"><span (click)="gotoDesc(hotel.id)" routerLink="/descriptions" 
+              routerLinkActive="active">{{hotel.name}}</span></div>
+            <fa name="thumbs-up" class="green"></fa> {{hotel.positiveReviews}}
+            &nbsp;&nbsp;<fa name="thumbs-down" class="red"></fa> {{hotel.negativeReviews}}
+          </div>
+          <div class="col-lg-2 btn-specs">
+            <button class="btn btn-outline-primary btn-lg" [disabled]="!hotel.available"
+             (click)="validateLoginDetails(hotel.name)">Book</button>
+             <div *ngIf="!hotel.available" class="warning">Not available</div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

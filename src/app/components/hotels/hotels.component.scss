@@ -1,0 +1,49 @@
+.hotel-search{
+
+    .search-container
+    {
+    padding-top: 10px;
+    }
+    .display-list{
+        margin-top: 10px;
+        .detail-wrapper
+        { 
+            margin-bottom: 10px;
+                
+    background-color: white;
+   
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px 1px lightgrey;
+        .hotel-icon{
+            .img-class{
+                height:125px;
+            }
+        }
+        .btn-specs{
+            line-height: 7;
+            text-align: center;
+            .warning{
+                color:red;
+                line-height: 0 !important;
+            }
+        }
+
+        .hotel-details{
+            line-height: 2;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            .hotel-name{
+                cursor: pointer;
+                font-size: 24px;
+                font-weight: 600px;
+            }
+            .green{
+                color:#28a745;
+            }
+            .red{
+                color:#dc3545;
+            }
+        }
+        }
+    }
+}
